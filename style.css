@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #0a0a23;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #00d9ff;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.hero {
+  height: 90vh;
+  background: linear-gradient(to right, #0a0a23, #1f1f4d);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #00d9ff;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.section {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.gray {
+  background: #f4f4f4;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  width: 260px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+form input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+form button {
+  background: #0a0a23;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+}
+
+.whatsapp {
+  display: inline-block;
+  margin: 20px;
+  color: green;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
