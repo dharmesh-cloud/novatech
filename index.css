@@ -1,0 +1,342 @@
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #020617;
+  color: #e5e7eb;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===== MESH BACKGROUND ===== */
+.mesh-bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, #22d3ee33, transparent 40%),
+              radial-gradient(circle at 80% 10%, #8b5cf633, transparent 40%),
+              radial-gradient(circle at 50% 80%, #ec489933, transparent 40%);
+  filter: blur(100px);
+  z-index: -2;
+  animation: meshMove 12s infinite alternate;
+}
+
+@keyframes meshMove {
+  from { transform: scale(1) translate(0,0); }
+  to { transform: scale(1.2) translate(-60px, 60px); }
+}
+
+#particle-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+}
+
+/* ===== NAVBAR ===== */
+header {
+  position: fixed;
+  width: 100%;
+  padding: 24px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  background: rgba(2,6,23,0.7);
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: #22d3ee;
+  text-shadow: 0 0 20px #22d3ee;
+}
+
+nav a {
+  margin-left: 40px;
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #22d3ee;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 160px 80px;
+}
+
+.hero-content h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 80px;
+  line-height: 1.05;
+  margin-bottom: 30px;
+}
+
+.glow-text span {
+  color: #22d3ee;
+  text-shadow: 0 0 40px #22d3ee, 0 0 80px #8b5cf6;
+}
+
+.hero-content p {
+  max-width: 600px;
+  color: #cbd5f5;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  padding: 14px 36px;
+  border-radius: 40px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: 0.4s;
+}
+
+.neon {
+  background: linear-gradient(90deg, #22d3ee, #8b5cf6);
+  color: #020617;
+  box-shadow: 0 0 40px #8b5cf6;
+}
+
+.neon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 80px #22d3ee;
+}
+
+.outline {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.outline:hover {
+  border-color: #22d3ee;
+  color: #22d3ee;
+}
+
+/* ===== GLASS PANELS ===== */
+.glass-panel {
+  margin: 120px 80px;
+  padding: 90px;
+  border-radius: 40px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 80px rgba(139,92,246,0.25);
+}
+
+.glass-panel h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #22d3ee;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.glass-panel p {
+  color: #cbd5f5;
+  line-height: 1.9;
+}
+
+/* ===== SYSTEM CARDS ===== */
+.systems {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 50px;
+  padding: 120px 80px;
+}
+
+.system-card {
+  padding: 60px 40px;
+  border-radius: 30px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.system-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(34,211,238,0.3), transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.system-card:hover::after {
+  opacity: 1;
+}
+
+.system-card:hover {
+  box-shadow: 0 0 100px rgba(34,211,238,0.5);
+}
+
+.system-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: #22d3ee;
+  margin-bottom: 10px;
+}
+
+.system-card p {
+  color: #cbd5f5;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  text-align: center;
+}
+
+/* ===== WHATSAPP ===== */
+/* ===== WHATSAPP ORB ===== */
+.whatsapp-orb {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #22d3ee;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(34,211,238,0.3);
+  box-shadow:
+    0 0 20px rgba(34,211,238,0.4),
+    inset 0 0 20px rgba(34,211,238,0.2);
+  z-index: 999;
+  transition: 0.4s ease;
+  animation: pulseGlow 2.5s infinite;
+}
+
+.whatsapp-orb svg {
+  width: 28px;
+  height: 28px;
+}
+
+.whatsapp-orb:hover {
+  transform: scale(1.15);
+  box-shadow:
+    0 0 40px rgba(34,211,238,0.8),
+    0 0 80px rgba(139,92,246,0.6);
+  color: #8b5cf6;
+}
+
+/* Glow Pulse */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(34,211,238,0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(139,92,246,0.8);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(34,211,238,0.4);
+  }
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  header { padding: 20px 30px; }
+  .hero { padding: 140px 30px; }
+  .hero-content h1 { font-size: 42px; }
+  .glass-panel { margin: 80px 30px; padding: 50px; }
+  .systems { padding: 80px 30px; }
+}
+/* ===== CONTACT FORM (FIXED & POLISHED) ===== */
+
+.contact {
+  max-width: 900px;
+  margin: 120px auto;
+  padding: 60px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.08);
+  text-align: center;
+}
+
+.contact-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  color: #66f2ff;
+}
+
+.contact-form {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #66f2ff;
+  box-shadow: 0 0 18px rgba(102, 242, 255, 0.4);
+}
+
+/* Button */
+.btn.full-width {
+  width: 100%;
+  padding: 16px;
+  margin-top: 10px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+/* Footer note */
+.contact-note {
+  margin-top: 28px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}

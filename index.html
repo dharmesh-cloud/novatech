@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
@@ -75,10 +75,31 @@
 
 <!-- CONTACT -->
 <section id="contact" class="glass-panel contact">
-  <h2>INITIATE CONTACT</h2>
-  <p>Email: dharmeshwaranp2004@email.com</p>
-  <p>WhatsApp: +91 9940169400</p>
+  <h2 class="contact-title">INITIATE CONTACT</h2>
+
+  <form id="contactForm" class="contact-form">
+    <div class="form-group">
+      <input type="text" name="name" placeholder="Your Name" required>
+    </div>
+
+    <div class="form-group">
+      <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+
+    <div class="form-group">
+      <textarea name="message" placeholder="Your Message" required></textarea>
+    </div>
+
+    <button type="submit" class="btn neon full-width">
+      SEND MESSAGE
+    </button>
+  </form>
+
+  <p class="contact-note">
+    Demonstrates frontend-to-backend communication in a full-stack architecture.
+  </p>
 </section>
+
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/919940169400" target="_blank" class="whatsapp-orb">
@@ -89,6 +110,6 @@
 
 
 <!-- JS -->
-  <script src="script.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
