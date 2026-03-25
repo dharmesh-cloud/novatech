@@ -10,13 +10,8 @@
   
   <!-- CSS -->
   <link rel="stylesheet" href="index.css">
-
-  <!-- ✅ ADDED: Hide chatbot initially -->
-  <style>
-    
-  </style>
-
 </head>
+
 <body>
 
 <!-- Background Effects -->
@@ -83,16 +78,16 @@
 <section id="contact" class="glass-panel contact">
   <h2 class="contact-title">INITIATE CONTACT</h2>
 
-  <!-- ✅ ADDED: Pre-chat form -->
+  <!-- Chat Form -->
   <div id="chatForm">
     <input type="text" id="firstName" placeholder="First Name" required>
     <input type="text" id="lastName" placeholder="Last Name" required>
     <input type="email" id="email" placeholder="Email" required>
     <input type="text" id="phone" placeholder="Phone" required>
-    <button onclick="startChat()" class="btn neon full-width">START CHAT</button>
+    <button id="startChatBtn">START CHAT</button>
   </div>
 
-  <!-- Existing form (unchanged) -->
+  <!-- Contact Form -->
   <form id="contactForm" class="contact-form">
     <div class="form-group">
       <input type="text" name="name" placeholder="Your Name" required>
@@ -126,29 +121,35 @@
 <!-- JS -->
 <script src="index.js"></script>
 
-<!-- ✅ ADDED: Chat logic -->
+<!-- ✅ ODOO LIVE CHAT -->
 <script>
-function startChat() {
-  let chatBtn = document.querySelector(".o_livechat_button");
-
-  if (chatBtn) {
-    chatBtn.click();
-  } else {
-    alert("Chat still loading... wait a few seconds and try again.");
-  }
-}
+window.odooLiveChatConfig = {
+    channel_id: 2
+};
 </script>
 
+<!-- 🔥 REPLACE THIS URL WITH YOUR NGROK URL -->
+<script src="https://cristina-monogenistic-unsurlily.ngrok-free.dev/im_livechat/loader/2" async></script>
 
-<!-- ODOO LIVE CHAT (FIXED LOADING) -->
+<!-- ✅ BUTTON TRIGGER -->
+<script>
+window.addEventListener("load", function () {
 
-  <script src="https://cristina-monogenistic-unsurlily.ngrok-free.dev/im_livechat/loader/2"></script>
-<script src="https://cristina-monogenistic-unsurlily.ngrok-free.dev/im_livechat/assets_embed.js"></script>
+  document.getElementById("startChatBtn").addEventListener("click", function () {
 
-  // Load after page fully loads
-  window.addEventListener("load", function () {
-    setTimeout(loadOdooChat, 2000);
+    let check = setInterval(() => {
+      let chatButton = document.querySelector(".o_livechat_button");
+
+      if (chatButton) {
+        chatButton.click(); // 🚀 opens chat popup
+        clearInterval(check);
+      }
+    }, 500);
+
   });
+
+});
 </script>
+
 </body>
 </html>
