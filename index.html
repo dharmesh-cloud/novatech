@@ -13,9 +13,7 @@
 
   <!-- ✅ ADDED: Hide chatbot initially -->
   <style>
-    .o_livechat_button {
-      display: none !important;
-    }
+    
   </style>
 
 </head>
@@ -131,22 +129,26 @@
 <!-- ✅ ADDED: Chat logic -->
 <script>
 function startChat() {
-  document.getElementById("chatForm").style.display = "none";
-
   let chatBtn = document.querySelector(".o_livechat_button");
 
   if (chatBtn) {
-    chatBtn.style.display = "block";
     chatBtn.click();
   } else {
-    alert("Chat not loaded yet, wait 2 seconds...");
+    alert("Chat still loading... wait a few seconds and try again.");
   }
 }
 </script>
 
-<!-- ✅ YOUR EXISTING (keep it, just replace URL later) -->
-<!-- ODOO LIVE CHAT -->
-<script defer src="https://cristina-monogenistic-unsurlily.ngrok-free.dev/im_livechat/loader/2"></script>
-<script defer src="https://cristina-monogenistic-unsurlily.ngrok-free.dev/im_livechat/assets_embed.js"></script>
+
+<!-- ODOO LIVE CHAT (FIXED LOADING) -->
+
+  <script src="https://cristina-monogenistic-unsurlily.ngrok-free.dev/im_livechat/loader/2"></script>
+<script src="https://cristina-monogenistic-unsurlily.ngrok-free.dev/im_livechat/assets_embed.js"></script>
+
+  // Load after page fully loads
+  window.addEventListener("load", function () {
+    setTimeout(loadOdooChat, 2000);
+  });
+</script>
 </body>
 </html>
