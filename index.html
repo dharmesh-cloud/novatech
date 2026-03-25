@@ -10,6 +10,14 @@
   
   <!-- CSS -->
   <link rel="stylesheet" href="index.css">
+
+  <!-- ✅ ADDED: Hide chatbot initially -->
+  <style>
+    .o_livechat_button {
+      display: none !important;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -77,6 +85,16 @@
 <section id="contact" class="glass-panel contact">
   <h2 class="contact-title">INITIATE CONTACT</h2>
 
+  <!-- ✅ ADDED: Pre-chat form -->
+  <div id="chatForm">
+    <input type="text" id="firstName" placeholder="First Name" required>
+    <input type="text" id="lastName" placeholder="Last Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="text" id="phone" placeholder="Phone" required>
+    <button onclick="startChat()" class="btn neon full-width">START CHAT</button>
+  </div>
+
+  <!-- Existing form (unchanged) -->
   <form id="contactForm" class="contact-form">
     <div class="form-group">
       <input type="text" name="name" placeholder="Your Name" required>
@@ -100,16 +118,34 @@
   </p>
 </section>
 
-
 <!-- WHATSAPP -->
 <a href="https://wa.me/919940169400" target="_blank" class="whatsapp-orb">
   <svg viewBox="0 0 32 32">
-    <path fill="currentColor" d="M16.003 2.003c-7.732 0-14 6.268-14 14 0 2.468.647 4.883 1.877 7.006L2 30l7.147-1.847a13.93 13.93 0 0 0 6.856 1.85h.001c7.732 0 14-6.268 14-14s-6.268-14-14-14zm8.243 19.04c-.345.97-1.706 1.776-2.35 1.87-.6.09-1.354.127-2.18-.137-.5-.158-1.14-.37-1.97-.72-3.47-1.5-5.74-5.01-5.92-5.25-.17-.23-1.41-1.88-1.41-3.59 0-1.71.9-2.55 1.22-2.9.32-.35.7-.44.94-.44.24 0 .47 0 .68.01.22.01.51-.08.8.61.3.7 1.03 2.43 1.12 2.61.09.18.15.39.03.62-.12.23-.18.39-.36.6-.18.21-.38.47-.54.63-.18.18-.37.38-.16.74.21.36.94 1.55 2.01 2.51 1.38 1.23 2.54 1.61 2.9 1.79.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.8-.18.32.12 2.04.96 2.39 1.14.35.18.58.27.66.42.09.15.09.88-.26 1.85z"/>
+    <path fill="currentColor" d="..."/>
   </svg>
 </a>
 
-
 <!-- JS -->
-  <script src="index.js"></script>
+<script src="index.js"></script>
+
+<!-- ✅ ADDED: Chat logic -->
+<script>
+function startChat() {
+  document.getElementById("chatForm").style.display = "none";
+
+  let chatBtn = document.querySelector(".o_livechat_button");
+
+  if (chatBtn) {
+    chatBtn.style.display = "block";
+    chatBtn.click();
+  } else {
+    alert("Chat not loaded yet, wait 2 seconds...");
+  }
+}
+</script>
+
+<!-- ✅ YOUR EXISTING (keep it, just replace URL later) -->
+<script src="https://cristina-monogenistic-unsurlily.ngrok-free.dev/im_livechat/assets_embed.js"></script>
+
 </body>
 </html>
