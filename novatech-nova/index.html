@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NovaTech | Future Systems Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Background Effects -->
+<canvas id="particle-canvas"></canvas>
+<div class="mesh-bg"></div>
+
+<!-- NAVBAR -->
+<header>
+  <div class="logo">NOVATECH</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Systems</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1 class="glow-text">
+      ENGINEERING<br>
+      <span>THE FUTURE</span>
+    </h1>
+    <p>
+      NovaTech is a next-generation digital systems lab building intelligent,
+      scalable and futuristic platforms for ambitious businesses.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn neon">INITIATE PROJECT</a>
+      <a href="#services" class="btn outline">EXPLORE SYSTEMS</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="glass-panel">
+  <h2>WHO WE ARE</h2>
+  <p>
+    NovaTech operates at the intersection of software, cloud and futuristic UI.
+    We design, engineer and deploy next-gen digital experiences.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="systems">
+  <div class="system-card tilt">
+    <h3>WEB PLATFORMS</h3>
+    <p>High-performance, immersive web experiences.</p>
+  </div>
+
+  <div class="system-card tilt">
+    <h3>SOFTWARE SYSTEMS</h3>
+    <p>Scalable architecture & intelligent logic.</p>
+  </div>
+
+  <div class="system-card tilt">
+    <h3>CLOUD & DEVOPS</h3>
+    <p>Automated infrastructure & deployment pipelines.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="glass-panel contact">
+  <h2>INITIATE CONTACT</h2>
+  <p>Email: dharmeshwaranp2004@email.com</p>
+  <p>WhatsApp: +91 9940169400</p>
+
+  <!-- START CHAT BUTTON -->
+  <button id="startChatBtn" class="btn neon" style="margin-top:1.5rem;cursor:pointer;border:none;">
+    START CHAT
+  </button>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919940169400" target="_blank" class="whatsapp-orb">
+  <svg viewBox="0 0 32 32">
+    <path fill="currentColor" d="M16.003 2.003c-7.732 0-14 6.268-14 14 0 2.468.647 4.883 1.877 7.006L2 30l7.147-1.847a13.93 13.93 0 0 0 6.856 1.85h.001c7.732 0 14-6.268 14-14s-6.268-14-14-14zm8.243 19.04c-.345.97-1.706 1.776-2.35 1.87-.6.09-1.354.127-2.18-.137-.5-.158-1.14-.37-1.97-.72-3.47-1.5-5.74-5.01-5.92-5.25-.17-.23-1.41-1.88-1.41-3.59 0-1.71.9-2.55 1.22-2.9.32-.35.7-.44.94-.44.24 0 .47 0 .68.01.22.01.51-.08.8.61.3.7 1.03 2.43 1.12 2.61.09.18.15.39.03.62-.12.23-.18.39-.36.6-.18.21-.38.47-.54.63-.18.18-.37.38-.16.74.21.36.94 1.55 2.01 2.51 1.38 1.23 2.54 1.61 2.9 1.79.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.8-.18.32.12 2.04.96 2.39 1.14.35.18.58.27.66.42.09.15.09.88-.26 1.85z"/>
+  </svg>
+</a>
+
+<!-- ODOO LIVE CHAT -->
+<script>
+  window.__odooLiveChatInfo = {
+    serverUrl: "https://cristina-monogenistic-unsurlily.ngrok-free.dev",
+    channelId: 2
+  };
+</script>
+<script defer="defer" type="text/javascript"
+  src="https://cristina-monogenistic-unsurlily.ngrok-free.dev/im_livechat/loader/2">
+</script>
+
+<!-- START CHAT BUTTON LOGIC -->
+<script>
+  document.getElementById('startChatBtn').addEventListener('click', function () {
+    if (window.LiveChat) {
+      window.LiveChat.open();
+    } else {
+      var attempts = 0;
+      var interval = setInterval(function () {
+        attempts++;
+        if (window.LiveChat) {
+          clearInterval(interval);
+          window.LiveChat.open();
+        }
+        if (attempts > 20) {
+          clearInterval(interval);
+          alert("Chat unavailable. Please reach us on WhatsApp.");
+        }
+      }, 500);
+    }
+  });
+</script>
+
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html>
